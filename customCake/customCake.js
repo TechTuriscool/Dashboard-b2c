@@ -2,23 +2,23 @@ export class customCake extends HTMLElement {
     constructor() {
         super();
         // Inicializamos 'completed' correctamente.
-        this.totalUnits;
-        this.unitsCompleted;
+        this.totalunits;
+        this.unitscompleted;
         this.completed;
         this.attachShadow({ mode: 'open' }); // Usamos Shadow DOM para encapsulamiento
     }
 
     static get observedAttributes() {
-        return ["totalUnits", "unitsCompleted"];
+        return ["totalunits", "unitscompleted"];
     }
 
     attributeChangedCallback(attribute, oldValue, newValue) {
         if (oldValue !== newValue) {
             switch (attribute) {
-                case "totalUnits":
+                case "totalunits":
                     this.totalUnits = newValue;
                     break;
-                case "unitsCompleted":
+                case "unitscompleted":
                     this.unitsCompleted = newValue;
                     this.completed = Math.trunc((this.unitsCompleted / this.totalUnits) * 100);
                     this.updatePieChart();
