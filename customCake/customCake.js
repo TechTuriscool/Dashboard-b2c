@@ -30,43 +30,6 @@ export class customCake extends HTMLElement {
 
     connectedCallback() {
         this.shadowRoot.innerHTML = /*html*/`
-        <style>
-.piechart-body {
-    width: 400px;
-    height: 400px;
-    margin:10px;
-    border-radius: 10px;
-    background: #efefef;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 10px;
-    border: 1px solid #ccc;
-}
-
-        .piechart {
-            display:flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 300px; 
-            height: 300px; 
-            border-radius: 50%;
-            background: conic-gradient(
-                #006791 0deg, #05BFAD var(--deg, 0deg),  /* Rojo hasta el ángulo definido por 'completed' */
-                #F3F8FF var(--deg, 0deg), lightgray 360deg  /* Gris para el resto del círculo */
-            );
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        h3 {
-            width: 100%;
-            margin: 10px;
-            text-align: left;
-
-        }
-    </style>
     <div class = "piechart-body">
     <div class="piechart">
     </div>
