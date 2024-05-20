@@ -21,7 +21,8 @@ export class customBarGraph extends HTMLElement {
         this.innerHTML = /*html*/`
         <style>
             .bargraph {
-                width: 400px;
+                width: 1000px;
+                max-width: 90%;
                 height: 200px;
                 background: #efefef;
                 border: 1px solid #ccc;
@@ -53,6 +54,7 @@ export class customBarGraph extends HTMLElement {
 
             .averageTimeSpent {
                 width: 0px;
+                max-width: 90%;
                 height: 30px;
                 background: #05BFAD;
                 display: flex;
@@ -94,9 +96,21 @@ export class customBarGraph extends HTMLElement {
         const averageTimeSpent = this.averageTimeSpent;
         const timeSpentElement = this.querySelector('.timeSpent');
         const averageTimeSpentElement = this.querySelector('.averageTimeSpent');
+        let widthContainer = this.getElementsByClassName('bargraph')[0].offsetWidth;
+        let averageTimeSpentWidth = widthContainer * 0.9;
+        let timeSpentWidth = (timeSpent / averageTimeSpent) * widthContainer * 0.9;
+        const finalResult = Math.trunc((timeSpent / averageTimeSpent)*(720*0.9));
+        console.log(finalResult);
 
-        timeSpentElement.style.width = `${timeSpent}px`;
-        averageTimeSpentElement.style.width = `${averageTimeSpent}px`;
+        if(timeSpentWidth > averageTimeSpentWidth) {
+            timeSpentElement.style.width = `${averageTimeSpentWidth}px`;
+            averageTimeSpentElement.style.width = `${timeSpent}%`;
+        } else {
+            timeSpentElement.style.width = `${timeSpent}%`;
+            averageTimeSpentElement.style.width = `${averageTimeSpentWidth}px`;
+        }
+
+
     }
 }
 
