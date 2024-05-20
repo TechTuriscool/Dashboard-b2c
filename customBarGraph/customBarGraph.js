@@ -1,7 +1,6 @@
 export class customBarGraph extends HTMLElement {
     constructor() {
         super();
-        this.attachShadow({ mode: 'open' });
     }
 
     static get observedAttributes() {
@@ -19,7 +18,7 @@ export class customBarGraph extends HTMLElement {
         this.timeSpent = Number(this.getAttribute('timeSpent')) || 0;
         this.averageTimeSpent = Number(this.getAttribute('averageTimeSpent')) || 0;
 
-        this.shadowRoot.innerHTML = /*html*/`
+        this.innerHTML = /*html*/`
         <style>
             .bargraph {
                 width: 400px;
@@ -93,8 +92,8 @@ export class customBarGraph extends HTMLElement {
     updateBarGraph() {
         const timeSpent = this.timeSpent;
         const averageTimeSpent = this.averageTimeSpent;
-        const timeSpentElement = this.shadowRoot.querySelector('.timeSpent');
-        const averageTimeSpentElement = this.shadowRoot.querySelector('.averageTimeSpent');
+        const timeSpentElement = this.querySelector('.timeSpent');
+        const averageTimeSpentElement = this.querySelector('.averageTimeSpent');
 
         timeSpentElement.style.width = `${timeSpent}px`;
         averageTimeSpentElement.style.width = `${averageTimeSpent}px`;
