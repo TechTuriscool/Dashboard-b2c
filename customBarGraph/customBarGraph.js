@@ -82,9 +82,9 @@ export class customBarGraph extends HTMLElement {
             }
         </style>
         <div class="bargraph">
-            <img class="user-icon" src="/Dashboard-b2c/customBarGraph/assets/user-svgrepo-com.svg" alt="user icon">
+            <img class="user-icon" src="https://i.ibb.co/FV4YVXs/user-svgrepo-com.png" alt="user icon">
             <div class="timeSpent"></div>
-            <img class="average-users-icon" src="/Dashboard-b2c/customBarGraph/assets/users-group-svgrepo-com.svg" alt="users group icon">
+            <img class="average-users-icon" src="https://i.ibb.co/Bf6L5Zj/users-group-svgrepo-com.png" alt="users group icon">
             <div class="averageTimeSpent"></div>
         </div>
         `;
