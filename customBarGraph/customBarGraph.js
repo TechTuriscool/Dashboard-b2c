@@ -80,11 +80,26 @@ export class customBarGraph extends HTMLElement {
                 height: 50px;
                 margin-bottom: 10px;
             }
+
+            .a {
+                font-size: 16px;
+                font-weight: bold;
+                margin: 0;
+                margin-bottom: 10px;
+                width: 100%;
+                text-align: left;
+                margin-left: 10px;
+            }
+
+            .containerImg {
+                display: flex;
+                align-items: center;
+            }
         </style>
         <div class="bargraph">
-            <img class="user-icon" src="https://i.ibb.co/FV4YVXs/user-svgrepo-com.png" alt="user icon">
+            <div class="containerImg"><img class="user-icon" src="https://i.ibb.co/FV4YVXs/user-svgrepo-com.png" alt="user icon"><a class='a'>MI TIEMPO</a></div>
             <div class="timeSpent"></div>
-            <img class="average-users-icon" src="https://i.ibb.co/Bf6L5Zj/users-group-svgrepo-com.png" alt="users group icon">
+            <div class="containerImg"><img class="average-users-icon" src="https://i.ibb.co/Bf6L5Zj/users-group-svgrepo-com.png" alt="users group icon"><a class='a'>MEDIA TIEMPO USUARIOS</a></div>
             <div class="averageTimeSpent"></div>
         </div>
         `;
